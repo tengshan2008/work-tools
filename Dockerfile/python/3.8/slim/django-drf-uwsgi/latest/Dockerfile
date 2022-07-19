@@ -1,10 +1,10 @@
 FROM python:3.8-slim
 
 RUN apt-get update && \
-    apt install -y netcat && \
+    apt install -y netcat uwsgi-plugin-python3 && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip install --no-cache-dir -U pip wheel && \
+RUN pip install --no-cache-dir -U pip wheel djangorestframework && \
     pip install --no-cache-dir django==3.2.14
 
 ENV PYTHONUNBUFFERED 1

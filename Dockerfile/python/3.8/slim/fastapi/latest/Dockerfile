@@ -4,8 +4,7 @@ RUN apt-get update && \
     apt install -y netcat && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip install --no-cache-dir -U pip wheel && \
-    pip install --no-cache-dir django==3.2.14
+RUN pip install --no-cache-dir -U pip wheel fastapi
 
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
